@@ -7,13 +7,12 @@ function List() {
     const taskItem = event.target.parentElement.parentElement.textContent;
 
     let tasks;
-    console.log("In");
+
     if (localStorage.getItem("tasks") === null) {
       tasks = [];
     } else {
       tasks = JSON.parse(localStorage.getItem("tasks"));
     }
-    console.log(tasks);
     tasks.forEach((task, index) => {
       if (taskItem === task) {
         tasks.splice(index, 1);
